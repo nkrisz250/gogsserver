@@ -1,0 +1,104 @@
+c14@u125:~$ 
+c14@u125:~$ 
+c14@u125:~$ ssh -keygen
+Bad escape character 'ygen'.
+c14@u125:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/c14/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/c14/.ssh/id_rsa.
+Your public key has been saved in /home/c14/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:UqEgoOg5LL/Cx0YXrqsdilE6BZFmu3Bx6XsOIagu73c c14@u125
+The key's randomart image is:
++---[RSA 2048]----+
+|oo. ..  .        |
+|++..o. . .       |
+|*..+  . .        |
+|=o+ o. .         |
+|+*+..oo S        |
+|o*..oo..         |
+|* +.o+           |
+|+=o*o E          |
+|o*B+..           |
++----[SHA256]-----+
+c14@u125:~$ cat .ssh/
+id_rsa       id_rsa.pub   known_hosts  
+c14@u125:~$ cat .ssh/
+id_rsa       id_rsa.pub   known_hosts  
+c14@u125:~$ cat .ssh/id_rsa.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8ZZDDxjl7uXo4d5gT69XkMAhcBwUfVlS+y3rP1RBtHNwOIaoK1WUEgjWVuJ4eBTryQrWBGqIdTMD2vg4+TqrN3qxz58Ktl1CoBQGUkeChxg5FZ7s+V5WdotoBIXma94Laafru2Z7xViwdLlVshk2yP8Z4+kyKAkswukocYU7dRpqJJTUZl22bB22Dxw/5LWUeRDdrdxEU5RbGqamHXb7DQHcjW7jYOg0CFDz+QV969PGawd7/JkelvP7hJ9k1hCujlGqdFqdmeFV3bUxrcVvvLwqpqOM2GvCmp6nBPQ+LblZNqys/pheNhUAD0c7g2e8CjhqPFH42ffcV7NSpHPXT c14@u125
+c14@u125:~$ git clone git@192.168.2.24:nkrisz250/asd.git
+Cloning into 'asd'...
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+SHA256:P/ITRQrjJNg0wKTtdjUl8j4eXhJVPSbDvAe29M5vKA8.
+Please contact your system administrator.
+Add correct host key in /home/c14/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/c14/.ssh/known_hosts:6
+  remove with:
+  ssh-keygen -f "/home/c14/.ssh/known_hosts" -R "192.168.2.24"
+RSA host key for 192.168.2.24 has changed and you have requested strict checking.
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+c14@u125:~$   ssh-keygen -f "/home/c14/.ssh/known_hosts" -R "192.168.2.24"
+# Host 192.168.2.24 found: line 6
+/home/c14/.ssh/known_hosts updated.
+Original contents retained as /home/c14/.ssh/known_hosts.old
+c14@u125:~$ git clone git@192.168.2.24:nkrisz250/asd.git
+Cloning into 'asd'...
+The authenticity of host '192.168.2.24 (192.168.2.24)' can't be established.
+RSA key fingerprint is SHA256:P/ITRQrjJNg0wKTtdjUl8j4eXhJVPSbDvAe29M5vKA8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.2.24' (RSA) to the list of known hosts.
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (6/6), 498 bytes | 498.00 KiB/s, done.
+c14@u125:~$ mc
+
+c14@u125:~$ cd asd
+c14@u125:~/asd$ ls
+qweads  README.md
+c14@u125:~/asd$ touch Krisz
+c14@u125:~/asd$ git add .
+c14@u125:~/asd$ git commit -m"elso"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'c14@u125.(none)')
+c14@u125:~/asd$   git config --global user.email "you@example.com"
+c14@u125:~/asd$   git config --global user.email "you@example.com"
+c14@u125:~/asd$  git config --global user.email "you@example.com"
+c14@u125:~/asd$ git config --global user.email "krisz250@gmail.com"
+c14@u125:~/asd$ git config --global user.name "Nagy Krisztian"
+c14@u125:~/asd$ git commit -m"elso"
+[master d1bcda2] elso
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Krisz
+c14@u125:~/asd$ git push 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 302 bytes | 302.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To 192.168.2.24:nkrisz250/asd.git
+   76b2083..d1bcda2  master -> master
+c14@u125:~/asd$ ^C
